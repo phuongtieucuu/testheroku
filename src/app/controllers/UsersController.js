@@ -9,7 +9,7 @@ class UserController {
         Promise.all([User.find({})
         .skip((req.query.page -1) * pageSize)
         .limit(pageSize)
-        ,User.count()])
+        ,User.countDocuments()])
         .then(([data,index]) => res.render('home',{
             data: AraytoObject(data),
             index,
