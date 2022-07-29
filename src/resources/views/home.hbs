@@ -3,34 +3,3 @@
   <div>{{this.password}}</div>
 
 {{/each}}
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link prevPage" href="">Previous</a></li>
-  {{{page index pageIndex}}}
-    <li class="page-item"><a class="page-link nextPage" href="#">Next</a></li>
-  </ul>
-</nav>
-<script>
-var prevPage = document.querySelector('.prevPage')
-var nextPage = document.querySelector('.nextPage')
-var active = document.querySelector('a .active')
-var pageIndex = {{pageIndex}}
-var index = {{index}}
-
-
-prevPage.onclick = function(e) {
-  pageIndex--
-  if(pageIndex <= 0) {
-    pageIndex = 1
-  }
-  prevPage.href = `/?page=${pageIndex}`
-}
-nextPage.onclick = function(e) {
-  index = Math.ceil(Number(index)/5)
-  pageIndex++
-  if(pageIndex === index +1) {
-    pageIndex = index
-  }
-  nextPage.href = `/?page=${pageIndex}`
-}
-</script>
