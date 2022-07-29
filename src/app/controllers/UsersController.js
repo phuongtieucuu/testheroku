@@ -5,17 +5,18 @@ const passport = require('passport')
 class UserController {
     // [GET] /user/
     loginUser(req, res,next) {
-        var pageSize = 6
-        Promise.all([User.find({})
-        .skip((req.query.page -1) * pageSize)
-        .limit(pageSize)
-        ,User.countDocuments()])
-        .then(([data,index]) => res.render('home',{
-            data: AraytoObject(data),
-            index,
-            pageIndex: req.query.page
-        }))
-        .catch(err => next(err))
+        res.send('Hello World!')
+        // var pageSize = 6
+        // Promise.all([User.find({})
+        // .skip((req.query.page -1) * pageSize)
+        // .limit(pageSize)
+        // ,User.countDocuments()])
+        // .then(([data,index]) => res.render('home',{
+        //     data: AraytoObject(data),
+        //     index,
+        //     pageIndex: req.query.page
+        // }))
+        // .catch(err => next(err))
     }
     //[GET] /login/
     login(req, res,next) {

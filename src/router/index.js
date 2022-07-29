@@ -6,10 +6,10 @@ const newLogout = require('./logout')
 
 
 function route(app) {
-    app.use('/',newSite)
     app.use('/user',newUser)
     app.use('/login',newLogin)
     app.use('/logout',newLogout)
+    app.use('/',newSite)
 
 }
 
