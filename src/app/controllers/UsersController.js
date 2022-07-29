@@ -5,7 +5,12 @@ const passport = require('passport')
 class UserController {
     // [GET] /user/
     loginUser(req, res,next) {
-        res.send('Hello World!')
+        User.find({})
+            .then(data =>res.render('home',{
+                    data: AraytoObject(data),
+    
+                }) )
+
         // var pageSize = 6
         // Promise.all([User.find({})
         // .skip((req.query.page -1) * pageSize)
@@ -16,7 +21,7 @@ class UserController {
         //     index,
         //     pageIndex: req.query.page
         // }))
-        // .catch(err => next(err))
+        .catch(err => next(err))
     }
     //[GET] /login/
     login(req, res,next) {
