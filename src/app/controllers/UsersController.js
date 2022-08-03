@@ -3,13 +3,13 @@ const User = require('../module/User')
 const jwt = require('jsonwebtoken')
 const passport = require('passport')
 class UserController {
-    // [GET] /user/
+    // [GET] /
     loginUser(req, res,next) {
         User.find({})
-            .then(data =>res.render('home',{
-                    data: AraytoObject(data),
+            // .then(data =>res.render('home',{
+            //         data: AraytoObject(data),
     
-                }) )
+            //     }) )
 
         // var pageSize = 6
         // Promise.all([User.find({})
@@ -21,6 +21,7 @@ class UserController {
         //     index,
         //     pageIndex: req.query.page
         // }))
+        .then(res.send('Hello'))
         .catch(err => next(err))
     }
     //[GET] /login/
