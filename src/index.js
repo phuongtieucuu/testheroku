@@ -11,7 +11,7 @@ const local = require('./passport/passpost-local');
 const showLogger =require('./app/middleware/showLogger')
 const methodOverride = require('method-override')
 const passportFb =require('./passport/passport-fb')
-const dotenv = require('dotenv')
+// const dotenv = require('dotenv')
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 'keyboard cat',
@@ -21,7 +21,7 @@ app.use(session({
 }))
 app.use(showLogger)
 app.use(methodOverride('_method'))
-dotenv.config()
+// dotenv.config()
 
 app.use(passport.initialize())
 app.use(passport.session())  // req.session.user = profile
